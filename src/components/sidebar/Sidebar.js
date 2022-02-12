@@ -1,7 +1,7 @@
 import React from 'react';
 import "./_sidebar.scss"
 function Sidebar() {
-  return <div>
+  return <div className='border border-danger'>
       Sidebar
   </div>;
 }

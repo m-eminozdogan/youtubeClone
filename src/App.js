@@ -1,4 +1,5 @@
 import "./App.css";
+import "./_app.scss"
 import { Container } from "react-bootstrap";
 
 import Header from "./components/header/Header";
@@ -8,9 +9,9 @@ function App() {
   return (
     <>
       <Header />
-      <div className="app_container">
+      <div className="app__container border border-info">
         <Sidebar />
-        <Container fluid className="app_main">
+        <Container fluid className="app__main border border-warning">
           <HomeScreen />
         </Container>
       </div>
