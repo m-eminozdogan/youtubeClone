@@ -3,10 +3,10 @@ import "./_header.scss";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdNotifications, MdApps } from "react-icons/md";
-function Header() {
+function Header(props) {
   return (
     <div className="border border-dark header">
-      <FaBars className="header__menu" size={26} />
+      <FaBars className="header__menu" size={26} onClick={()=>props.handleSetSideBar()}/>
       <img
         alt="#"
         className="header__logo"
