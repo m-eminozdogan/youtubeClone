@@ -6,19 +6,22 @@ import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import { useState } from "react";
+import LoginScreen from "./screens/loginScreen/LoginScreen";
 function App() {
   const [sideBar, setSideBar] = useState(false);
   const handleSetSideBar = () => setSideBar((value) => !value);
   return (
-    <>
-      <Header handleSetSideBar={handleSetSideBar} />
-      <div className="app__container">
-        <Sidebar sideBar={sideBar} handleSetSideBar={handleSetSideBar} />
-        <Container fluid className="app__main">
-          <HomeScreen />
-        </Container>
-      </div>
-    </>
+    // <>
+    //   <Header handleSetSideBar={handleSetSideBar} />
+    //   <div className="app__container">
+    //     <Sidebar sideBar={sideBar} handleSetSideBar={handleSetSideBar} />
+    //     <Container fluid className="app__main">
+    //       <HomeScreen />
+    //     </Container>
+    //   </div>
+    // </>
+
+    <LoginScreen />
   );
 }
 
