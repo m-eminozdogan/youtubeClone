@@ -6,11 +6,11 @@
     display:flex;
     overflow-x:scroll;
 
-    ////chrome
+    //// for chrome
     &::-webkit-scrollbar{
         width: 0;
     } 
-    ////firefox
+    //// for firefox
     scrollbar-width: 0;
 
     span{
