@@ -5,7 +5,7 @@ import React from "react";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const Layout = (children) => {
@@ -28,7 +28,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={Layout(HomeScreen())} />
-
+        <Route
+          path="/search"
+          element={Layout(
+            <>
+              <h1>arama sonuçları</h1>
+            </>
+          )}
+        />
         <Route path="/login" element={<LoginScreen />} />
       </Routes>
     </Router>
