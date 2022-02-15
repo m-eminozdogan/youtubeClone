@@ -21,6 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
+provider.addScope('https://www.googleapis.com/auth/youtube.force-ssl');
 const auth = getAuth();
 //const analytics = getAnalytics(app);
 

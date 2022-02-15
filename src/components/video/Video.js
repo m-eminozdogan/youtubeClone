@@ -1,23 +1,77 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./_video.scss";
 import { AiFillEye } from "react-icons/ai";
-function Video() {
+import request from "../../api";
+
+import moment from "moment";
+import numeral from "numeral";
+
+function Video({ video }) {
+  const {
+    id,
+    snippet: {
+      channelId,
+      channelTitle,
+      title,
+      publishedAt,
+      thumbnails: { medium },
+    },
+  } = video;
+
+  const [views, setViews] = useState(null);
+  const [duration, setDuration] = useState(null);
+  const [channelIcon, setChannelIcon] = useState(null);
+
+  const seconds = moment.duration(duration).asSeconds();
+  const _duration = moment.utc(seconds * 1000).format("mm:ss");
+
+  useEffect(() => {
+    const get_video_deatails = async () => {
+      const {
+        data: { items },
+      } = await request("/videos", {
+        params: {
+          part: "contentDetails,statistics",
+          id: id,
+        },
+      });
+      setDuration(items[0].contentDetails.duration);
+      setViews(items[0].statistics.viewCount);
+    };
+    get_video_deatails();
+  }, [id]);
+
+  useEffect(() => {
+    const get_channel_icon = async () => {
+      const {
+        data: { items },
+      } = await request("/channels", {
+        params: {
+          part: "snippet",
+          id: channelId,
+        },
+      });
+      setChannelIcon(items[0].snippet.thumbnails.default);
+    };
+    get_channel_icon();
+  }, [channelId]);
+
   return (
     <div className="video">
       <div className="video__top">
-        <img alt="#" src="https://i.ytimg.com/vi/MAaKNZ6DYuI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCY3S3asMmq-iDziLHdJx-BNov9CA" />
-        <span>07:13</span>
+        <img alt="#" src={medium.url} />
+        <span> {_duration} </span>
       </div>
-      <div className="video__title">black squad double kill</div>
+      <div className="video__title">{title}</div>
       <div className="video__details">
         <span>
-          <AiFillEye /> 245.723 views
+          <AiFillEye /> {numeral(views).format("0.a")} views
         </span>
-        <span> • 1 month ago</span>
+        <span> • {moment(publishedAt).fromNow()} </span>
       </div>
       <div className="video__channel">
-        <img alt="#" src="https://yt3.ggpht.com/ytc/AKedOLQ09BVL3UopArYBUOJmFnf3exVucUz1QAlutP8-=s68-c-k-c0x00ffffff-no-rj" />
-        <p>kyleinthegame</p>
+        <img alt="#" src={channelIcon?.url} />
+        <p>{channelTitle}</p>
       </div>
     </div>
   );

@@ -12,36 +12,59 @@ import {
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/auth";
 function Sidebar(props) {
-  const dispatch=useDispatch()
-  const handleLogout=()=>{
-    dispatch(logout())
-  }
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
-    <nav
-      className={props.sideBar ? "sidebar open" : "sidebar"}
-      onClick={() => {props.handleSetSideBar(false)}}
-    >
-      <li>
+    <nav className={props.sideBar ? "sidebar open" : "sidebar"}>
+      <li
+        onClick={() => {
+          props.handleSetSideBar(false);
+        }}
+      >
         <MdHome size={23} />
         <span>Home</span>
       </li>
-      <li>
+      <li
+        onClick={() => {
+          props.handleSetSideBar(false);
+        }}
+      >
         <MdSubscriptions size={23} />
         <span>Subscription</span>
       </li>
-      <li>
+      <li
+        onClick={() => {
+          props.handleSetSideBar(false);
+        }}
+      >
         <MdThumbUp size={23} />
         <span>Like</span>
       </li>
-      <li>
+      <li
+        onClick={() => {
+          props.handleSetSideBar(false);
+        }}
+      >
         <MdHistory size={23} />
         <span>History</span>
       </li>
-      <li>
+      <li
+        onClick={() => {
+          props.handleSetSideBar(false);
+        }}
+      >
         <MdLibraryBooks size={23} />
         <span>Library</span>
       </li>
-      <li>
+      <li
+        onClick={() => {
+          props.handleSetSideBar(false);
+        }}
+      >
         <MdSentimentDissatisfied size={23} />
         <span>idk :/</span>
       </li>

@@ -35,18 +35,18 @@ function App() {
   }, [accessToken, loading]);
 
   return (
-      <Routes>
-        <Route path="/" element={Layout(HomeScreen())} />
-        <Route
-          path="/search"
-          element={Layout(
-            <>
-              <h1>arama sonuçları</h1>
-            </>
-          )}
-        />
-        <Route path="/login" element={<LoginScreen />} />
-      </Routes>
+    <Routes>
+      <Route path="/login" element={<LoginScreen />} />
+      <Route path="/" element={Layout(HomeScreen())} />
+      <Route
+        path="/search"
+        element={Layout(
+          <>
+            <h1>arama sonuçları</h1>
+          </>
+        )}
+      />
+    </Routes>
   );
 }
 
