@@ -71,7 +71,7 @@ function Video({ video }) {
       </div>
       <div className="video__channel">
         <img alt="#" src={channelIcon?.url} />
-        <p>{channelTitle}</p>
+        <p> {channelTitle} </p>
       </div>
     </div>
   );

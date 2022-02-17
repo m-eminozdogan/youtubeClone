@@ -36,9 +36,10 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/login" element={<LoginScreen />} />
-      <Route path="/" element={Layout(HomeScreen())} />
+      <Route exact path="/login" element={<LoginScreen />} />
+      <Route exact path="/" element={Layout(HomeScreen())} />
       <Route
+        exact
         path="/search"
         element={Layout(
           <>
