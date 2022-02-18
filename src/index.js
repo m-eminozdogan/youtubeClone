@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css"; ////if this line more under css sucks !
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import App from "./App";
 import "./index.css";
 import "./_base.scss";
