@@ -10,6 +10,7 @@ import LoginScreen from "./screens/loginScreen/LoginScreen";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import WatchScreen from "./screens/watchScreen/WatchScreen";
 const Layout = (children) => {
   const [sideBar, setSideBar] = useState(false);
   const handleSetSideBar = () => setSideBar((value) => !value);
@@ -47,6 +48,7 @@ function App() {
           </>
         )}
       />
+      <Route exact path="/watch/:id" element={Layout(WatchScreen())} />
     </Routes>
   );
 }
