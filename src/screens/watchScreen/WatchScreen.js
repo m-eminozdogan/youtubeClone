@@ -19,15 +19,9 @@ const WatchScreen = () => {
           ></iframe>
         </div>
         <VideoMetaData />
-        <Comments/>
+        <Comments />
       </Col>
-      <Col lg={4}>
-        {[
-          ...Array(10).map(() => {
-            <VideoHorizontal />;
-          }),
-        ]}
-      </Col>
+      <Col lg={4}>{[...Array(10)].map(() => <VideoHorizontal />)}</Col>
     </Row>
   );
 };
