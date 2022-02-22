@@ -1,0 +1,42 @@
+Date : 2022-02-20 19:21:47
+Directory : c:\kamp\youtubeClone\youtube-clone
+Total : 9 files,  210 codes, 1 comments, 12 blanks, all 223 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| SCSS       |          4 |        120 |          0 |          9 |        129 |
+| JavaScript |          5 |         90 |          1 |          3 |         94 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                    | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                       |          9 |        210 |          1 |         12 |        223 |
+| src                                                                                     |          9 |        210 |          1 |         12 |        223 |
+| src\components                                                                          |          8 |        216 |          1 |         12 |        229 |
+| src\components\comment                                                                  |          2 |         35 |          0 |          3 |         38 |
+| src\components\comments                                                                 |          2 |         54 |          1 |          0 |         55 |
+| src\components\videoHorizontal                                                          |          2 |        101 |          0 |          9 |        110 |
+| src\components\videoMetaData                                                            |          2 |         26 |          0 |          0 |         26 |
+| src\screens                                                                             |          1 |         -6 |          0 |          0 |         -6 |
+| src\screens\watchScreen                                                                 |          1 |         -6 |          0 |          0 |         -6 |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\kamp\youtubeClone\youtube-clone\src\components\comment\Comment.js                    | JavaScript |         21 |          0 |          2 |         23 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\comment\_comment.scss                 | SCSS       |         14 |          0 |          1 |         15 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\comments\Comments.js                  | JavaScript |         29 |          1 |          0 |         30 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\comments\_comments.scss               | SCSS       |         25 |          0 |          0 |         25 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoHorizontal\VideoHorizontal.js    | JavaScript |         32 |          0 |          1 |         33 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoHorizontal\_videoHorizontal.scss | SCSS       |         69 |          0 |          8 |         77 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoMetaData\VideoMetaData.js        | JavaScript |         14 |          0 |          0 |         14 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoMetaData\_videoMetaData.scss     | SCSS       |         12 |          0 |          0 |         12 |
+| c:\kamp\youtubeClone\youtube-clone\src\screens\watchScreen\WatchScreen.js               | JavaScript |         -6 |          0 |          0 |         -6 |
+| Total                                                                                   |            |        210 |          1 |         12 |        223 |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

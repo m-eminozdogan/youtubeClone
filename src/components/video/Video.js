@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./_video.scss";
 import { AiFillEye } from "react-icons/ai";
 import request from "../../api";
-
+import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import numeral from "numeral";
 
@@ -59,9 +59,14 @@ function Video({ video }) {
     };
     get_channel_icon();
   }, [channelId]);
+  
+  const navigate = useNavigate();
+  const handleVideoClick = () => {
+    navigate(`/watch/${_videoId}`)
+  };
 
   return (
-    <div className="video">
+    <div className="video" onClick={handleVideoClick}>
       <div className="video__top">
         {/* <img alt="#" src={medium.url} /> */}
         <LazyLoadImage src={medium.url} effect="blur" />

@@ -7,7 +7,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import { useState } from "react";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import WatchScreen from "./screens/watchScreen/WatchScreen";
@@ -38,6 +38,8 @@ function App() {
   return (
     <Routes>
       <Route exact path="/login" element={<LoginScreen />} />
+      <Route exact path="/watch/:id" element={Layout(WatchScreen())} />
+
       <Route exact path="/" element={Layout(HomeScreen())} />
       <Route
         exact
@@ -48,7 +50,6 @@ function App() {
           </>
         )}
       />
-      <Route exact path="/watch/:id" element={Layout(WatchScreen())} />
     </Routes>
   );
 }
