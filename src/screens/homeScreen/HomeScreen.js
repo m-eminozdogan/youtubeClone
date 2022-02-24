@@ -8,7 +8,7 @@ import {
   getVideosByCategory,
 } from "../../redux/actions/videos";
 import InfiniteScroll from "react-infinite-scroll-component";
-import SkeletonVideo from "../../components/skeletons/SkeletonVideo";
+//import SkeletonVideo from "../../components/skeletons/SkeletonVideo";
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -44,7 +44,7 @@ const HomeScreen = () => {
       >
         <Row>
           {
-          //loading?
+          //loading ?
              videos?.map((video,i) => (
                 <Col lg={3} md={4} key={i}>
                   <Video video={video} />

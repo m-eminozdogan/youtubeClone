@@ -2,6 +2,9 @@ import {
   HOME_VIDEOS_FAIL,
   HOME_VIDEOS_REQUEST,
   HOME_VIDEOS_SUCCESS,
+  SELECTED_VIDEO_FAIL,
+  SELECTED_VIDEO_REQUEST,
+  SELECTED_VIDEO_SUCCESS,
 } from "../actionType";
 
 export const homeVideosReducer = (
@@ -42,5 +45,39 @@ export const homeVideosReducer = (
       return {
         state,
       };
+  }
+};
+
+export const selectedVideoReducer = (
+  state = {
+    loading: true,
+    video: null,
+  },
+  action
+) => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case SELECTED_VIDEO_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case SELECTED_VIDEO_SUCCESS:
+      return {
+        ...state,
+        video: payload,
+        loading: false,
+      };
+    case SELECTED_VIDEO_FAIL:
+      return {
+        ...state,
+        video: null,
+        loading: false,
+        error: payload,
+      };
+    default:
+      return state;
   }
 };

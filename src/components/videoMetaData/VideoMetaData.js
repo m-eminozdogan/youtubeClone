@@ -6,23 +6,29 @@ import numeral from "numeral";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import ShowMoreText from "react-show-more-text";
 
-const VideoMetaData = () => {
+const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
+  const { channelId, channelTitle, description, title, publishedAt } = snippet;
+  const { viewCount, likeCount, dislikeCount } = statistics;
+
   return (
     <div className="videoMetaData py-2">
       <div className="videoMetaData__top">
-        <h5>Video Title</h5>
+        <h5>{title}</h5>
         <div className="d-flex justify-content-between align-items-center py-1">
           <span>
-            {numeral(10000).format("0.a")} Views •
-            {moment("2022-02-19").fromNow()}
+            {/* {viewCount} Views • */}
+            {numeral(viewCount).format("0.a")} Views •&nbsp;
+            {moment(publishedAt).fromNow()}
           </span>
 
           <div>
             <span className="mr-3">
-              <MdThumbUp size={26} /> {numeral(500).format("0.a")}
+              <MdThumbUp size={26} /> {numeral(likeCount).format("0.a")}
             </span>
+            &nbsp; &nbsp; &nbsp;
             <span>
-              <MdThumbDown size={26} /> {numeral(300).format("0.a")}
+              <MdThumbDown size={26} /> ?&nbsp;
+              {/* {numeral(dislikeCount).format("0.a")} */}
             </span>
           </div>
         </div>
@@ -35,8 +41,10 @@ const VideoMetaData = () => {
             className="rounded-circle mr-3"
           />
           <div className="d-flex flex-column mx-2">
-            <span>Channel name</span>
-            <span>{numeral(1000).format("0.a")} Subscribers</span>
+            <span>{channelTitle}</span>
+            <span>
+              {/* {numeral(0).format("0.a")}  */}
+              ?&nbsp; Subscribers</span>
           </div>
         </div>
 
@@ -50,17 +58,7 @@ const VideoMetaData = () => {
           anchorClass="showMoreText"
           expanded={false}
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy textever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. Lorem Ipsum is simply dummy text of
-          the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and scrambled it to make a type specimen
-          book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged.
+          {description}
         </ShowMoreText>
       </div>
     </div>
