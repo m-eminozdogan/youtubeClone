@@ -87,7 +87,8 @@ export const getVideoById = (id) => async (dispatch) => {
       type: SELECTED_VIDEO_SUCCESS,
       payload: data.items[0],
     });
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error.message);
     dispatch({
       type: SELECTED_VIDEO_FAIL,

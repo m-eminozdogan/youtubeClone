@@ -38,9 +38,9 @@ function App() {
   return (
     <Routes>
       <Route exact path="/login" element={<LoginScreen />} />
-      <Route exact path="/watch/:id" element={Layout(WatchScreen())} />
+      <Route  path="/watch/:id" element={Layout(WatchScreen())} />
 
-      <Route exact path="/" element={Layout(HomeScreen())} />
+     
       <Route
         exact
         path="/search"
@@ -50,6 +50,7 @@ function App() {
           </>
         )}
       />
+      <Route exact path="/" element={Layout(HomeScreen())} />
     </Routes>
   );
 }

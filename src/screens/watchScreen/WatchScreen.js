@@ -8,7 +8,8 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getVideoById } from "../../redux/actions/videos";
 const WatchScreen = () => {
-  const { id } = useParams;
+  //const { id } = useParams();
+  //console.log(id);
   ///// weird way to get video id cuz useParams doesn't work :/ //////////
   //console.log(window.location.pathname);
   let fullPath = window.location.pathname;
