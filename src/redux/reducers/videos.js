@@ -73,9 +73,9 @@ export const selectedVideoReducer = (
     case SELECTED_VIDEO_FAIL:
       return {
         ...state,
-        video: null,
-        loading: false,
-        error: payload,
+        // video: null,
+        // loading: false,
+       // error: payload,
       };
     default:
       return state;

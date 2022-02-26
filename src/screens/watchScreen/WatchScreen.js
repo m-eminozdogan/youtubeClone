@@ -19,7 +19,9 @@ const WatchScreen = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getVideoById(vId));
+    if (vId) {
+      dispatch(getVideoById(vId));
+    } 
   }, [dispatch, vId]);
 
   const { video, loading } = useSelector((state) => state.selectedVideo);

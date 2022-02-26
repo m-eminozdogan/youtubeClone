@@ -14,7 +14,9 @@ const HomeScreen = () => {
   const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(getPopularVideos());
+    if (user) {
+      dispatch(getPopularVideos());
+    }
   }, [dispatch, user]);
 
   const { videos, activeCategory, loading } = useSelector(
@@ -44,11 +46,13 @@ const HomeScreen = () => {
       >
         <Row>
           {
-          //loading ?
-             videos?.map((video,i) => (
-                <Col lg={3} md={4} key={i}>
-                  <Video video={video} />
-                </Col>))
+            //loading ?
+            videos?.map((video, i) => (
+              <Col lg={3} md={4} key={i}>
+                <Video video={video} />
+              </Col>
+            ))
+
             //   ))
             // : [...Array(20)].map(() => (
             //     <Col lg={3} md={4}>
