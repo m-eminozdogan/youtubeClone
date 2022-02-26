@@ -6,13 +6,17 @@ import numeral from "numeral";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import ShowMoreText from "react-show-more-text";
 import { useDispatch, useSelector } from "react-redux";
-import { getChannelDetails } from "../../redux/actions/channel";
+import {
+  checkSubscriptionStatus,
+  getChannelDetails,
+} from "../../redux/actions/channel";
 
 const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
   const { channelId, channelTitle, description, title, publishedAt } = snippet;
   const { viewCount, likeCount, dislikeCount } = statistics;
 
   const dispatch = useDispatch();
+
   const channelSnippet = useSelector(
     (state) => state?.channelDetails?.channel?.snippet
   );
@@ -23,8 +27,13 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
   // const { snippet: channelSnippet, statistics: channelStatistics } =
   //   useSelector((state) => state?.channelDetails?.channel);
 
+  const subscriptionStatus = useSelector(
+    (state) => state?.channelDetails?.subscriptionStatus
+  );
+
   useEffect(() => {
     dispatch(getChannelDetails(channelId));
+    dispatch(checkSubscriptionStatus(channelId));
   }, [dispatch, channelId]);
 
   return (
@@ -72,7 +81,11 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
           </div>
         </div>
 
-        <button className="btn border-0 p-2 m-2">Subscribe</button>
+        <button
+          className={`btn border-0 p-2 m-2 ${subscriptionStatus && "btn-gray"}`}
+        >
+          {subscriptionStatus ? " Subscribed" : "Subscribe"}
+        </button>
       </div>
       <div className="videoMetaData__description">
         <ShowMoreText
