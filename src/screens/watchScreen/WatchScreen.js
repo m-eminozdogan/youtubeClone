@@ -41,9 +41,9 @@ const WatchScreen = () => {
         {!loading ? (
           <VideoMetaData video={video} videoId={vId} />
         ) : (
-          <h1>sıkıntı yükleniyor</h1>
+          <h1>video verileri yükleniyor...</h1>
         )}
-        <Comments />
+        <Comments videoId={vId} totalComments={video?.statistics?.commentCount} />
       </Col>
       <Col lg={4}>
         {[...Array(10)].map(() => (

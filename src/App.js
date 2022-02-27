@@ -49,6 +49,13 @@ function App() {
         )}
       />
       <Route path="/" element={Layout(HomeScreen())} />
+      <Route
+        element={
+          <div>
+            <h1>NO PAGE FOUND HERE</h1>
+          </div>
+        }
+      />
     </Routes>
   );
 }
