@@ -12,17 +12,15 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-
+  
   useEffect(() => {
     if (user) {
-      dispatch(getPopularVideos());
+     dispatch(getPopularVideos())
     }
   }, [dispatch, user]);
-
-  const { videos, activeCategory, loading } = useSelector(
+const { videos, activeCategory, loading } = useSelector(
     (state) => state.homeVideos
   );
-
   const fetchData = () => {
     if (activeCategory === "All") {
       dispatch(getPopularVideos());

@@ -11,9 +11,9 @@ import {
 } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/auth";
+
 function Sidebar(props) {
   const dispatch = useDispatch();
-
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -22,7 +22,8 @@ function Sidebar(props) {
     <nav className={props.sideBar ? "sidebar open" : "sidebar"}>
       <li
         onClick={() => {
-          props.handleSetSideBar(false);
+         
+           props.handleSetSideBar(false);
         }}
       >
         <MdHome size={23} />

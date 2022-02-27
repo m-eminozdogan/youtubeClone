@@ -9,6 +9,10 @@
   }
 
   &__thumbnail {
+    &-channel {
+      width: 50%;
+      border-radius: 50%;
+    }
     width: 100%;
     &-wrapper {
       width: 100%;

@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./_header.scss";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdNotifications, MdApps } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function Header(props) {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
+  const [input, setInput] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search/${input}`);
+  };
   if (!user) {
     return null;
   }
@@ -24,8 +30,13 @@ function Header(props) {
         className="header__logo"
         src="http://pngimg.com/uploads/youtube/youtube_PNG2.png"
       />
-      <form>
-        <input type="text" placeholder="Search" />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
         <button type="submit">
           <AiOutlineSearch size={22} />
         </button>
