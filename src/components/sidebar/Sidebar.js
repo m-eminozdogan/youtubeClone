@@ -11,6 +11,7 @@ import {
 } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/auth";
+import { Link } from "react-router-dom";
 
 function Sidebar(props) {
   const dispatch = useDispatch();
@@ -22,21 +23,22 @@ function Sidebar(props) {
     <nav className={props.sideBar ? "sidebar open" : "sidebar"}>
       <li
         onClick={() => {
-         
-           props.handleSetSideBar(false);
+          props.handleSetSideBar(false);
         }}
       >
         <MdHome size={23} />
         <span>Home</span>
       </li>
-      <li
-        onClick={() => {
-          props.handleSetSideBar(false);
-        }}
-      >
-        <MdSubscriptions size={23} />
-        <span>Subscription</span>
-      </li>
+      <Link to="/feed/subscriptions">
+        <li
+          onClick={() => {
+            props.handleSetSideBar(false);
+          }}
+        >
+          <MdSubscriptions size={23} />
+          <span>Subscription</span>
+        </li>
+      </Link>
       <li
         onClick={() => {
           props.handleSetSideBar(false);

@@ -19,6 +19,10 @@
     }
   }
 
+  &__description {
+    @include line-clamp(2);
+  }
+
   &__duration {
     position: absolute;
     font-size: 0.9rem;
@@ -58,7 +62,9 @@
 @media (max-width: $breakpoint-small) {
   .videoHorizontal {
     font-size: 0.8rem;
-
+    &__description {
+      display: none;
+    }
     &__details {
       @include line-clamp(1);
     }

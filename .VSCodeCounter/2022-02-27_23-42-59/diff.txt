@@ -1,0 +1,65 @@
+Date : 2022-02-27 23:42:59
+Directory : c:\kamp\youtubeClone\youtube-clone
+Total : 23 files,  598 codes, 19 comments, 63 blanks, all 680 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         19 |        588 |         19 |         63 |        670 |
+| SCSS       |          2 |          8 |          0 |          0 |          8 |
+| JSON       |          2 |          2 |          0 |          0 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                    | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                       |         23 |        598 |         19 |         63 |        680 |
+| src                                                                                     |         21 |        596 |         19 |         63 |        678 |
+| src\components                                                                          |          9 |        133 |         -1 |         16 |        148 |
+| src\components\comment                                                                  |          1 |          2 |          0 |          0 |          2 |
+| src\components\comments                                                                 |          1 |         18 |         -1 |          4 |         21 |
+| src\components\header                                                                   |          1 |         10 |         -2 |         -1 |          7 |
+| src\components\sidebar                                                                  |          1 |          0 |          0 |          1 |          1 |
+| src\components\video                                                                    |          1 |          5 |          0 |          0 |          5 |
+| src\components\videoHorizontal                                                          |          2 |         68 |          0 |          6 |         74 |
+| src\components\videoMetaData                                                            |          2 |         30 |          2 |          6 |         38 |
+| src\redux                                                                               |          8 |        402 |          3 |         44 |        449 |
+| src\redux\actions                                                                       |          3 |        197 |          0 |         19 |        216 |
+| src\redux\reducers                                                                      |          3 |        175 |          3 |         17 |        195 |
+| src\screens                                                                             |          3 |         61 |         17 |          2 |         80 |
+| src\screens\homeScreen                                                                  |          1 |         -2 |          8 |         -2 |          4 |
+| src\screens\searchScreen                                                                |          1 |         29 |          3 |          2 |         34 |
+| src\screens\watchScreen                                                                 |          1 |         34 |          6 |          2 |         42 |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\kamp\youtubeClone\youtube-clone\package-lock.json                                    | JSON       |          1 |          0 |          0 |          1 |
+| c:\kamp\youtubeClone\youtube-clone\package.json                                         | JSON       |          1 |          0 |          0 |          1 |
+| c:\kamp\youtubeClone\youtube-clone\src\App.js                                           | JavaScript |          0 |          0 |          1 |          1 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\comment\Comment.js                    | JavaScript |          2 |          0 |          0 |          2 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\comments\Comments.js                  | JavaScript |         18 |         -1 |          4 |         21 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\header\Header.js                      | JavaScript |         10 |         -2 |         -1 |          7 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\sidebar\Sidebar.js                    | JavaScript |          0 |          0 |          1 |          1 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoHorizontal\VideoHorizontal.js    | JavaScript |         63 |          0 |          6 |         69 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoHorizontal\_videoHorizontal.scss | SCSS       |          5 |          0 |          0 |          5 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoMetaData\VideoMetaData.js        | JavaScript |         27 |          2 |          6 |         35 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\videoMetaData\_videoMetaData.scss     | SCSS       |          3 |          0 |          0 |          3 |
+| c:\kamp\youtubeClone\youtube-clone\src\components\video\Video.js                        | JavaScript |          5 |          0 |          0 |          5 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\actionType.js                              | JavaScript |         18 |          0 |          8 |         26 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\actions\channel.js                         | JavaScript |         50 |          0 |          6 |         56 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\actions\comments.js                        | JavaScript |         65 |          0 |          6 |         71 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\actions\videos.js                          | JavaScript |         82 |          0 |          7 |         89 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\reducers\channel.js                        | JavaScript |         43 |          0 |          4 |         47 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\reducers\comments.js                       | JavaScript |         35 |          0 |          4 |         39 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\reducers\videos.js                         | JavaScript |         97 |          3 |          9 |        109 |
+| c:\kamp\youtubeClone\youtube-clone\src\redux\store.js                                   | JavaScript |         12 |          0 |          0 |         12 |
+| c:\kamp\youtubeClone\youtube-clone\src\screens\homeScreen\HomeScreen.js                 | JavaScript |         -2 |          8 |         -2 |          4 |
+| c:\kamp\youtubeClone\youtube-clone\src\screens\searchScreen\Search.js                   | JavaScript |         29 |          3 |          2 |         34 |
+| c:\kamp\youtubeClone\youtube-clone\src\screens\watchScreen\WatchScreen.js               | JavaScript |         34 |          6 |          2 |         42 |
+| Total                                                                                   |            |        598 |         19 |         63 |        680 |
++-----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
