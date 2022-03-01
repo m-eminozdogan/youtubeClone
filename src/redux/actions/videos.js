@@ -14,6 +14,9 @@ import {
   SUBSCRIPTIONS_CHANNEL_FAIL,
   SUBSCRIPTIONS_CHANNEL_REQUEST,
   SUBSCRIPTIONS_CHANNEL_SUCCESS,
+  CHANNEL_VIDEOS_REQUEST,
+  CHANNEL_VIDEOS_SUCCESS,
+  CHANNEL_VIDEOS_FAIL,
 } from "../actionType";
 import request from "../../api";
 
@@ -159,7 +162,7 @@ export const getVideosBySearch = (keyword) => async (dispatch, getState) => {
   }
 };
 
-export const getVideosByChannel = () => async (dispatch, getState) => {
+export const getSubscribedChannel = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: SUBSCRIPTIONS_CHANNEL_REQUEST,
@@ -183,6 +186,46 @@ export const getVideosByChannel = () => async (dispatch, getState) => {
     console.log(error.response.data);
     dispatch({
       type: SUBSCRIPTIONS_CHANNEL_FAIL,
+      payload: error.response.data,
+    });
+  }
+};
+
+export const getVideosByChannel = (id) => async (dispatch) => {
+  try {
+    dispatch({
+      type: CHANNEL_VIDEOS_REQUEST,
+    });
+    /// ilk olarak playlist id çekme
+    const {
+      data: { items },
+    } = await request("/channels", {
+      params: {
+        part: "contentDetails",
+        id: id,
+      },
+    });
+
+    ////playlist id yi alma
+    const uploadPlaylistId =
+      items[0]?.contentDetails?.relatedPlaylists?.uploads;
+    /// playlist videolarını çekme
+    const { data } = await request("/playlistItems", {
+      params: {
+        part: "contentDetails,snippet",
+        playlistId: uploadPlaylistId,
+        maxResults: 2,
+      },
+    });
+
+    dispatch({
+      type: CHANNEL_VIDEOS_SUCCESS,
+      payload: data.items,
+    });
+  } catch (error) {
+    console.log(error.response.data);
+    dispatch({
+      type: CHANNEL_VIDEOS_FAIL,
       payload: error.response.data,
     });
   }

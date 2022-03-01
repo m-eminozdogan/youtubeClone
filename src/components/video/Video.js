@@ -8,7 +8,7 @@ import numeral from "numeral";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-function Video({ video }) {
+function Video({ video, channelScreen }) {
   const {
     id,
     snippet: {
@@ -18,6 +18,7 @@ function Video({ video }) {
       publishedAt,
       thumbnails: { medium },
     },
+    contentDetails,
   } = video;
 
   const [views, setViews] = useState(null);
@@ -27,7 +28,7 @@ function Video({ video }) {
   const seconds = moment.duration(duration).asSeconds();
   const _duration = moment.utc(seconds * 1000).format("mm:ss");
 
-  const _videoId = id?.videoId || id;
+  const _videoId = id?.videoId || contentDetails?.videoId || id;
 
   useEffect(() => {
     const get_video_deatails = async () => {
@@ -39,8 +40,8 @@ function Video({ video }) {
           id: _videoId,
         },
       });
-      setDuration(items[0].contentDetails.duration);
-      setViews(items[0].statistics.viewCount);
+      setDuration(items[0]?.contentDetails?.duration);
+      setViews(items[0]?.statistics?.viewCount);
     };
     get_video_deatails();
   }, [_videoId]);
@@ -59,10 +60,10 @@ function Video({ video }) {
     };
     get_channel_icon();
   }, [channelId]);
-  
+
   const navigate = useNavigate();
   const handleVideoClick = () => {
-    navigate(`/watch/${_videoId}`)
+    navigate(`/watch/${_videoId}`);
   };
 
   return (
@@ -79,11 +80,13 @@ function Video({ video }) {
         </span>
         <span> • {moment(publishedAt).fromNow()} </span>
       </div>
-      <div className="video__channel">
-        {/* <img alt="#" src={channelIcon?.url} /> */}
-        <LazyLoadImage src={channelIcon?.url} effect="blur" />
-        <p style={{ marginLeft: "5px" }}> {channelTitle} </p>
-      </div>
+      {!channelScreen && (
+        <div className="video__channel">
+          {/* <img alt="#" src={channelIcon?.url} /> */}
+          <LazyLoadImage src={channelIcon?.url} effect="blur" />
+          <p style={{ marginLeft: "5px" }}> {channelTitle} </p>
+        </div>
+      )}
     </div>
   );
 }

@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import WatchScreen from "./screens/watchScreen/WatchScreen";
 import Search from "./screens/searchScreen/Search";
 import SubscriptionsScreen from "./screens/subscriptionsScreen/SubscriptionsScreen";
+import ChannelScreen from "./screens/channelScreen/ChannelScreen";
 const Layout = (children) => {
   const [sideBar, setSideBar] = useState(false);
   const handleSetSideBar = () => setSideBar((value) => !value);
@@ -47,10 +48,7 @@ function App() {
       />
 
       <Route path="/search/:query" element={Layout(Search())} />
-      <Route
-        path="/channel/:channelId"
-        element={Layout(<div>channel screen</div>)}
-      />
+      <Route path="/channel/:channelId" element={Layout(ChannelScreen())} />
 
       <Route path="/" element={Layout(HomeScreen())} />
       <Route

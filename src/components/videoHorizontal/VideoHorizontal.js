@@ -22,8 +22,8 @@ const VideoHorizontal = ({ video, searchScreen, subScreen }) => {
       title,
       publishedAt,
       thumbnails: { medium },
+      resourceId,
     },
-    resourceId,
   } = video;
 
   const isVideo = !(id.kind === "youtube#channel" || subScreen);
@@ -106,7 +106,9 @@ const VideoHorizontal = ({ video, searchScreen, subScreen }) => {
           </div>
         )}
 
-        {(subScreen || searchScreen) && <p className="mt-1 videoHorizontal__description">{description}</p>}
+        {(subScreen || searchScreen) && (
+          <p className="mt-1 videoHorizontal__description">{description}</p>
+        )}
 
         <div className="videoHorizontal__channel d-flex align-items-center my-1">
           {isVideo && <LazyLoadImage src={channelIcon?.url} effect="blur" />}
