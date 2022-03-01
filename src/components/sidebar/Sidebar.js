@@ -21,14 +21,16 @@ function Sidebar(props) {
 
   return (
     <nav className={props.sideBar ? "sidebar open" : "sidebar"}>
-      <li
-        onClick={() => {
-          props.handleSetSideBar(false);
-        }}
-      >
-        <MdHome size={23} />
-        <span>Home</span>
-      </li>
+      <Link to="/">
+        <li
+          onClick={() => {
+            props.handleSetSideBar(false);
+          }}
+        >
+          <MdHome size={23} />
+          <span>Home</span>
+        </li>{" "}
+      </Link>
       <Link to="/feed/subscriptions">
         <li
           onClick={() => {

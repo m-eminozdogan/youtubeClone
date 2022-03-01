@@ -4,7 +4,7 @@ import "./_watchScreen.scss";
 import VideoMetaData from "../../components/videoMetaData/VideoMetaData";
 import VideoHorizontal from "../../components/videoHorizontal/VideoHorizontal";
 import Comments from "../../components/comments/Comments";
-import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { getRelatedVideos, getVideoById } from "../../redux/actions/videos";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -32,6 +32,9 @@ const WatchScreen = () => {
   );
   return (
     <Row>
+      <Helmet>
+        <title>{video?.snippet?.title}</title>
+      </Helmet>
       <Col lg={8}>
         <div className="watchScreen__player">
           <iframe

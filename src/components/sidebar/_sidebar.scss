@@ -11,6 +11,13 @@
   position: sticky;
   left: 0;
   top: 10vh;
+  a {
+    color: $text-color;
+    &:hover {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
   li {
     display: flex;
     align-items: center;

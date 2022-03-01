@@ -6,18 +6,21 @@ import { MdNotifications, MdApps } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 function Header(props) {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
+  //const { user } = useSelector((state) => state.auth);
   const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/search/${input}`);
   };
-  if (!user) {
-    return null;
-  }
+  const { photoUrl } = useSelector((state) => state?.auth?.user || '');
+
+  //console.log(photoUrl);
+  // if (!photoUrl) {
+  //   return null;
+  // }
   return (
     <div className="border border-dark header">
       <FaBars
@@ -45,7 +48,7 @@ function Header(props) {
         <MdNotifications size={28} />
         <MdApps size={28} />
 
-        <img alt="avatar" src={user?.photoUrl} />
+        <img alt="avatar" src={photoUrl ? photoUrl : ""} />
       </div>
     </div>
   );
